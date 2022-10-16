@@ -35,6 +35,7 @@ spec:
         annotations:
           metallb.universe.tf/loadBalancerIPs: |-
             ${METALLB_INGRESS_ADDR}
+        metallb.universe.tf/address-pool: routed
         externalTrafficPolicy: Local
       publishService:
         enabled: true
