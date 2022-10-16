@@ -31,7 +31,10 @@ spec:
     ttl: 1
     service:
       type: LoadBalancer
+      ipFamilyPolicy: PreferDualStack
       port: 53
       annotations:
+        external-dns.alpha.kubernetes.io/hostname: "bgp-dns.${SECRET_DOMAIN}"
         metallb.universe.tf/loadBalancerIPs: "${METALLB_K8S_GATEWAY_ADDR}"
+        metallb.universe.tf/address-pool: routed
       externalTrafficPolicy: Local
