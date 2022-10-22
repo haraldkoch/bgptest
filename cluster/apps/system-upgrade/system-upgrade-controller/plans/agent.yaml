@@ -13,7 +13,7 @@ spec:
   version: "v1.25.2+k3s1"
   nodeSelector:
     matchExpressions:
-      - key: node-role.kubernetes.io/master
+      - key: node-role.kubernetes.io/control-plane
         operator: NotIn
         values:
           - "true"
